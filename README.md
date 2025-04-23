@@ -1,4 +1,4 @@
-# pprogramming-test-round
+# programming-test-round
 
 
 # Project setup guidelines #
