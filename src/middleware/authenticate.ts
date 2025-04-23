@@ -9,7 +9,7 @@ export const authenticate = (
   const token = req.header('Authorization')?.split(' ')[1];
   
   if (!token) {
-    res.status(401).json({ error: 'Access denied' });
+    res.status(401).json({ success: false, error: 'Access denied' });
     return;
   }
 
@@ -18,6 +18,6 @@ export const authenticate = (
     (req as any).user = verified;
     next();
   } catch (err) {
-    res.status(400).json({ error: 'Invalid token' });
+    res.status(400).json({ success: false, error: 'Invalid token' });
   }
 };
